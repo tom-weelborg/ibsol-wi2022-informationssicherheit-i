@@ -573,3 +573,20 @@ public class User {
     }
 }
 ```
+
+---
+
+# Authentifizierung und Autorisierung
+
+Begriffe
+
+<v-clicks>
+
+- Authentisierung
+  - Behauptung einer Identität
+- Authentifizierung
+  - Verifikation der Identität
+- Autorisierung
+  - Verbieten oder Erlauben von Zugriff auf Ressourcen
+
+</v-clicks>
