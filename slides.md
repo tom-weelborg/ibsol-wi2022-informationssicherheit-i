@@ -739,3 +739,29 @@ HMACSHA256(
     </div>
   </div>
 </div>
+
+---
+
+# Autorisierung mit OAuth 2.0
+
+Abstract Protocol Flow
+
+<Transform :scale="0.6">
+
+```mermaid
+sequenceDiagram
+
+actor Client
+actor Resource Owner
+actor Authorization Server
+actor Resource Server
+
+Client->>Resource Owner: Authorization Request
+Resource Owner->>Client: Authorization Grant
+Client->>Authorization Server: Authorization Grant
+Authorization Server->>Client: Access Token
+Client->>Resource Server: Access Token
+Resource Server->>Client: Protected Resource
+```
+
+</Transform>
