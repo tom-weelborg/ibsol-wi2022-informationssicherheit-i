@@ -1,0 +1,14 @@
+{
+    "editor.rulers": [],
+
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "*.jsonc"
+            ],
+            "schema": {
+                "allowTrailingCommas": true
+            }
+        }
+    ]
+}
