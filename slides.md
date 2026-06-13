@@ -84,3 +84,17 @@ layout: quote
 ---
 
 # Wie werden die Schutzziele bei der Entwicklung von Anwendungen umgesetzt?
+
+---
+
+# Secrets und Umgebungsvariablen
+
+Dont's
+
+<v-clicks>
+
+- Secrets öffentlich zugänglich machen
+  - Begriffswiderspruch: secret ⇔ öffentlich ⚡
+- Secrets im (privaten) Git-Repository speichern
+
+</v-clicks>
