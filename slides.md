@@ -631,3 +631,18 @@ Grundlagen Autorisierung
 </v-clicks>
 
 <GoalsOfInformationSecurity :status="{ confidentiality: true, integrity: true, availability: false }" />
+
+---
+hide: true
+---
+
+# Autorisierung mit OAuth 2.0
+
+Grundlagen
+
+<v-clicks>
+
+- Autorisierung durch Tokens, beispielsweise JSON Web Tokens (JWT)
+- verschiedene Abläufe möglich
+
+</v-clicks>
