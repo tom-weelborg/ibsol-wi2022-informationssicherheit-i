@@ -491,3 +491,85 @@ Grundlagen
 </v-clicks>
 
 <GoalsOfInformationSecurity :status="{ confidentiality: true, integrity: true, availability: false }" />
+
+---
+
+# Zugänglichkeit von Daten
+
+Data Transfer Objects (DTOs)
+
+<v-clicks>
+
+<div>
+
+```java {all}{lines:true}
+public class User {
+    private String name;
+    private String email;
+    private String password;
+}
+```
+
+</div>
+
+<div>
+
+```java {all}{lines:true}
+public class UserRegisterDTO {
+    private String name;
+    private String email;
+    private String password;
+}
+```
+
+</div>
+
+<div>
+
+```java {all}{lines:true}
+public class UserLoginDTO {
+    private String name;
+    private String password;
+}
+```
+
+</div>
+
+<div>
+
+```java {all}{lines:true}
+public class UserInfoDTO {
+    private String name;
+    private String email;
+}
+```
+
+</div>
+
+</v-clicks>
+
+---
+
+# Zugänglichkeit von Daten
+
+~~Data Transfer Objects (DTOs)~~ dank Jackson und Guava
+
+```java {all|6-9|11-16|13-15}{lines:true}
+public class User {
+    private String name;
+    private String email;
+    private String password;
+
+    @JsonIgnore
+    public String getPassword() {
+        return this.password;
+    }
+
+    @JsonProperty("password")
+    public void setHashedPassword(final String passwordToHash) {
+        this.password = Hashing.sha256()
+            .hashString(originalString, StandardCharsets.UTF_8)
+            .toString();
+    }
+}
+```
