@@ -765,3 +765,33 @@ Resource Server->>Client: Protected Resource
 ```
 
 </Transform>
+
+---
+hide: true
+---
+
+# Autorisierung mit OAuth 2.0
+
+Authorization Code Flow
+
+<Transform :scale="0.6">
+
+```mermaid
+sequenceDiagram
+
+actor Client
+actor Resource Owner
+actor Authorization Server
+actor Resource Server
+
+Client->>Authorization Server: User Authorization Request
+Authorization Server-) Resource Owner: Redirect
+Resource Owner->>Authorization Server: User Authorization Grant
+Authorization Server->>Client: Authorization Code Grant
+Client->>Authorization Server: Access Token Request
+Authorization Server->>Client: Access Token Grant
+Client->>Resource Server: Access Token
+Resource Server->>Client: Protected Resource
+```
+
+</Transform>
