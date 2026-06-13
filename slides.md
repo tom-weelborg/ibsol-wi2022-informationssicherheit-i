@@ -612,3 +612,22 @@ Grundlagen Authentifizierung
 - Verfahren: Basic Authentication für HTTP oder HTTPS
 
 </v-clicks>
+
+---
+
+# Authentifizierung und Autorisierung
+
+Grundlagen Autorisierung
+
+<v-clicks>
+
+- immer nach Authentifizierung
+- Beschränkung des Zugriffs auf Ressourcen
+- Rollen- oder Berechtigungskonzept
+- Umsetzung durch Bibliotheken und Verfahren
+  - LDAP
+  - OAuth2
+
+</v-clicks>
+
+<GoalsOfInformationSecurity :status="{ confidentiality: true, integrity: true, availability: false }" />
