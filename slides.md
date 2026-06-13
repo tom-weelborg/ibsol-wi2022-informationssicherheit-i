@@ -427,3 +427,21 @@ Risiken
 </v-clicks>
 
 <GoalsOfInformationSecurity :status="{ confidentiality: true, integrity: true, availability: true }" />
+
+---
+
+# Datenvalidierung
+
+Maßnahmen
+
+<v-clicks>
+
+- zentralisierter Mechanismus
+- Transformation in ein einheitliches Schema
+- Verwendung von Datentypen der eingesetzten Programmiersprache
+  - Gültigkeit von Daten erfassen
+- Konformität zur Geschäftslogik (Beispiel: valide E-Mail-Adressen)
+- Entfernen von Steueranweisungen aus Eingabefeldern (zur Prävention von XSS)
+- Pattern Matching bei Eingaben für SQL-Abfragen (zur Prävention von SQL-Injections)
+
+</v-clicks>
