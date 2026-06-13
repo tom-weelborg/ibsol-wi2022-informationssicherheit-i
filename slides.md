@@ -469,3 +469,25 @@ public class User {
     private String password;
 }
 ```
+
+---
+
+# Zugänglichkeit von Daten
+
+Grundlagen
+
+<v-clicks depth="2">
+
+- nicht alle Daten allen Clients zugänglich
+- Konsequenzen aus Kompromittierung mitigieren
+- Verschlüsselung des Transports
+  - asymmetrisches Verschlüsselungsverfahren (TLS, SSH)
+- Hashing
+  - Integrität von Daten
+  - Authentizität durch Signatur von Servern
+  - Hashfunktionen (SHA-256, SHA-512, RIPEMD-160)
+- Verstecken von Daten (Beispiel: DTOs)
+
+</v-clicks>
+
+<GoalsOfInformationSecurity :status="{ confidentiality: true, integrity: true, availability: false }" />
