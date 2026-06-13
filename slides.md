@@ -795,3 +795,11 @@ Resource Server->>Client: Protected Resource
 ```
 
 </Transform>
+
+---
+layout: center
+---
+
+# Vielen Dank für die Aufmerksamkeit!
+
+Schönes Wochenende!
