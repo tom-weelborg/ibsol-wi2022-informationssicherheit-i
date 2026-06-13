@@ -337,3 +337,72 @@ Dos
     </div>
   </template>
 </v-switch>
+
+---
+
+# Client- versus Serverlogik
+
+3-Schicht-Architektur
+
+<div v-click>
+
+```mermaid
+architecture-beta
+
+group web(internet)[Webanwendungen]
+
+service client(internet)[Frontend] in web
+service server(server)[Middleware] in web
+service db(database)[Backend] in web
+
+client:R --> L:server
+server:R --> L:db
+```
+
+</div>
+
+---
+
+# Client- versus Serverlogik
+
+3-Schicht-Architektur - Aufteilung
+
+<div class="w-full flex flex-row">
+  <div class="w-1/2">
+    <h3>
+      Client
+    </h3>
+<v-clicks depth="2">
+
+- Frontend (Präsentation)
+  - Farbmodus
+  - Sprache
+  - Höhe und Breite von Grafiken
+- Middleware (Zustandsverwaltung)
+  - Auswahl von Elementen
+  - Datenvalidierung
+  - Vorteil: kein Warten auf Antwort des Servers
+  - Nachteile: schlechte Performance, Unsicherheit durch Manipulierbarkeit (Beispiel: Cross-Site-Scripting (XSS))
+
+</v-clicks>
+  </div>
+  <div class="inline-block h-[350px] min-h-[1em] w-0.5 self-stretch bg-neutral-100 dark:bg-white/10 mx-2"></div>
+  <div class="w-1/2">
+    <h3>
+      Server
+    </h3>
+<v-clicks depth="2">
+
+- Middleware (Geschäftslogik)
+  - Datenvalidierung
+  - Rechteevaluierung (Authentifizierung und Autorisierung für CRUD-Operationen)
+  - Vorteil: Sicherheit
+  - Nachteile: Belastung des Servers sowie Reduktion von Performance und Verfügbarkeit (Beispiel: Denial-Of-Service-Angriff (DOS))
+- Backend (Datenhaltung)
+  - alle Abfragen
+
+</v-clicks>
+  </div>
+</div>
+
+<GoalsOfInformationSecurity :status="{ confidentiality: true, integrity: true, availability: true }" />
