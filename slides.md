@@ -406,3 +406,24 @@ server:R --> L:db
 </div>
 
 <GoalsOfInformationSecurity :status="{ confidentiality: true, integrity: true, availability: true }" />
+
+---
+
+# Datenvalidierung
+
+Risiken
+
+<v-clicks depth="2">
+
+- Validierung von Daten vor Verarbeitung
+- insbesondere keine Metaprogrammierung mit unvalidierten Daten
+  - keine Reflections
+  - keine `eval()`-Funktionen
+- keine SQL-Abfragen mit unvalidierten Daten (SQL-Injections)
+- bei Verwendung unvalidierter Daten:
+  - Kompromittierung der Verfügbarkeit und Authentizität des Servers
+  - Verletzung der Vertraulichkeit, Integrität und Verfügbarkeit von Daten
+
+</v-clicks>
+
+<GoalsOfInformationSecurity :status="{ confidentiality: true, integrity: true, availability: true }" />
