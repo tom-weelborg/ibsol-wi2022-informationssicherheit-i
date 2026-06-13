@@ -62,3 +62,19 @@ Datenleck bei VW
 <div class="w-full">
   <img src="./public/images/VW.jpg" alt="VW-Logo" class="size-70 m-auto" title="Quelle: https://www.volkswagen-newsroom.com/de/bilder/detail/volkswagen-logo-30145">
 </div>
+
+---
+
+# Wiederholung
+
+Schutzziele der Informationssicherheit
+<v-clicks>
+
+- Vertraulichkeit
+  - Zugriff auf Daten nur für autorisierte Personen
+- Integrität
+  - Veränderung von Daten nur durch autorisierte Personen
+- Verfügbarkeit
+  - Zugriff auf Daten möglich
+
+</v-clicks>
