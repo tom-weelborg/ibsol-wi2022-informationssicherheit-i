@@ -662,3 +662,80 @@ Grundlagen zu JWT
 - Header und Payload als Base64 encodiertes JSON
 
 </v-clicks>
+
+---
+
+# Autorisierung mit OAuth 2.0
+
+Beispiel eines JWT
+
+<div class="w-full flex flex-row">
+  <div class="w-1/2">
+    <h3>
+      Encodiert
+    </h3>
+<div>
+
+```{all|1|2-3|4}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvZSBO
+dXRzIiwiaWF0IjoxNTE2MjM5MDIyLCJyb2xlIjoiYWRtaW4ifQ.
+qX4U3XpnYxUgKZCDLkK8SIvktZ3z9uVczkYE0ZEq3ns
+```
+
+</div>
+  </div>
+  <div class="w-1/2">
+    <h3>
+      Decodiert
+    </h3>
+    <div v-click="1" class="flex">
+      <div class="w-1/3">
+        Header
+      </div>
+<div class="w-2/3">
+
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
+
+</div>
+    </div>
+    <div v-click="2" class="flex">
+      <div class="w-1/3">
+        Payload
+      </div>
+<div class="w-2/3">
+
+```json
+{
+  "sub": "1234567890",
+  "name": "Joe Nuts",
+  "iat": 1516239022,
+  "role": "admin"
+}
+```
+
+</div>
+    </div>
+    <div v-click="3" class="flex">
+      <div class="w-1/3">
+        Signatur
+      </div>
+<div class="w-2/3">
+
+```
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  your-256-bit-secret
+) 
+```
+
+</div>
+    </div>
+  </div>
+</div>
