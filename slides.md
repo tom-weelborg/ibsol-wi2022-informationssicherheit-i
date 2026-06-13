@@ -78,3 +78,9 @@ Schutzziele der Informationssicherheit
   - Zugriff auf Daten möglich
 
 </v-clicks>
+
+---
+layout: quote
+---
+
+# Wie werden die Schutzziele bei der Entwicklung von Anwendungen umgesetzt?
