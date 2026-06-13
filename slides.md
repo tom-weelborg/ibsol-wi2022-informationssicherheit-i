@@ -445,3 +445,27 @@ Maßnahmen
 - Pattern Matching bei Eingaben für SQL-Abfragen (zur Prävention von SQL-Injections)
 
 </v-clicks>
+
+---
+
+# Datenvalidierung
+
+Beispiel
+
+```java {all|2-3|4-8|6|9-14|12}{lines:true}
+public class User {
+    @NotBlank(message = "Name can not be empty")
+    private String name;
+    @Pattern(
+        message = "Email can not be empty",
+        regexp = "^[A-Za-z0-9]+(?:[\\.\\-_]+[A-Za-z0-9]+)*@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)*\\.[A-Za-z]{2,}$"
+    )
+    private String email;
+    @Pattern(
+        message = "Password must be at least 8 characters long and " + 
+                  "contain at least one number, one uppercase, one lowercase and one special character", 
+        regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$"
+    )
+    private String password;
+}
+```
