@@ -98,3 +98,242 @@ Dont's
 - Secrets im (privaten) Git-Repository speichern
 
 </v-clicks>
+
+---
+
+# Secrets und Umgebungsvariablen
+
+Dos
+
+<v-clicks>
+
+- Speicherung kann in Dateien erfolgen
+- Formate:
+  - .json
+  - .env
+
+</v-clicks>
+
+---
+
+# Secrets und Umgebungsvariablen
+
+Dos
+
+<div v-click="1">
+
+```properties
+DATABASE_USERNAME=username
+DATABASE_PASSWORD=password
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_NAME=database
+```
+
+.env-Datei &#8594; nicht im Repository
+
+</div>
+
+<div v-click="2">
+
+```properties
+DATABASE_USERNAME=<database_username>
+DATABASE_PASSWORD=<database_password>
+DATABASE_HOST=<database_host>
+DATABASE_PORT=<database_port>
+DATABASE_NAME=<database_name>
+```
+
+.env.example-Datei &#8594; im Repository
+
+</div>
+
+---
+
+# Secrets und Umgebungsvariablen
+
+Dos
+
+<div v-click>
+
+```yml
+services:
+  webapp:
+    env_file: ".env"
+    environment:
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+```
+
+Integration einer .env-Datei in eine `docker-compose.yml`-Datei
+
+</div>
+
+<div v-click>
+
+```yml
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+```
+
+Integration einer .env-Datei in eine `application.yml` von Spring Boot
+
+</div>
+
+---
+layout: quote
+---
+
+# Wie werden die Zugangsdaten verteilt/ausgetauscht?
+
+---
+
+# Secrets und Umgebungsvariablen
+
+Dos
+
+<div class="w-full flex flex-row">
+  <div class="w-1/2">
+    <h3>
+      lokale Umgebungen
+    </h3>
+    <ul>
+      <li v-click>
+        nur zum Testen
+      </li>
+      <li v-click>
+        Zugangsdaten selbst erstellen
+      </li>
+      <li v-click>
+        keine Verteilung
+      </li>
+    </ul>
+  </div>
+  <div class="inline-block h-[350px] min-h-[1em] w-0.5 self-stretch bg-neutral-100 dark:bg-white/10 mx-2"></div>
+  <div class="w-1/2">
+    <h3>
+      zentrale Umgebungen
+    </h3>
+    <ul>
+      <li v-click>
+        zum Testen oder in der Produktion
+      </li>
+      <li v-click>
+        Möglichkeiten zur Verteilung:
+        <ul>
+          <li>
+            E-Mail
+          </li>
+          <li>
+            Microsoft Teams
+          </li>
+          <li>
+            Secret-Manager
+          </li>
+        </ul>
+      </li>
+      <li v-click>
+        Mögliche Probleme:
+        <ol>
+          <li>
+            Verschlüsselung beachten
+          </li>
+          <li>
+            Verteilungsplattform dokumentieren
+          </li>
+          <li>
+            keine Unbefugten an Kommunikation beteiligen
+          </li>
+          <li>
+            <img src="./public/images/Flag_of_the_United_States.svg" alt="Flagge der USA" class="w-30" title="Quelle: https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg">
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<GoalsOfInformationSecurity :status="{ confidentiality: true, integrity: true, availability: true }" />
+
+---
+
+# Secrets und Umgebungsvariablen
+
+Dos
+
+### Secret-Manager
+
+<v-switch>
+  <template #0-4>
+    <ul>
+      <li v-click="1">
+        verschlüsseltes Speichern von Secrets
+      </li>
+      <li v-click="2">
+        Zugriffsbeschränkungssystem
+      </li>
+      <li v-click="3">
+        Beispiele:
+        <ul>
+          <li>
+            AWS Secret Manager
+          </li>
+          <li>
+            Azure Key Vault
+          </li>
+          <li>
+            GCP Secret Manager
+          </li>
+          <li>
+            HashiCorp Vault
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </template>
+  <template #4-11>
+    <div class="w-full flex flex-row">
+      <div class="w-1/2">
+        <h4>
+          Vorteile
+        </h4>
+        <ul>
+          <li v-click="5">
+            Verschlüsselung
+          </li>
+          <li v-click="6">
+            Vereinheitlichung des Identitäts- und Zugriffsmanagements
+          </li>
+          <li v-click="7">
+            Benutzergruppen für sowohl Repositorys als auch Secrets eines Projektes
+          </li>
+        </ul>
+      </div>
+      <div class="inline-block h-[350px] min-h-[1em] w-0.5 self-stretch bg-neutral-100 dark:bg-white/10 mx-2"></div>
+      <div class="w-1/2">
+        <h4>
+          Nachteile
+        </h4>
+        <ul>
+          <li v-click="8">
+            Abhängigkeit von Anbietern
+          </li>
+          <li v-click="9">
+            Datenabfluss aus dem Unternehmen heraus
+          </li>
+          <li v-click="10">
+            <img src="./public/images/Flag_of_the_United_States.svg" alt="Flagge der USA" class="w-30" title="Quelle: https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </template>
+</v-switch>
