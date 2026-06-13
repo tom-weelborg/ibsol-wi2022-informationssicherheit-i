@@ -646,3 +646,19 @@ Grundlagen
 - verschiedene Abläufe möglich
 
 </v-clicks>
+
+---
+
+# Autorisierung mit OAuth 2.0
+
+Grundlagen zu JWT
+
+<v-clicks>
+
+- Aufbau eines JWT:
+  - Header
+  - Payload
+  - Signatur
+- Header und Payload als Base64 encodiertes JSON
+
+</v-clicks>
