@@ -590,3 +590,25 @@ Begriffe
   - Verbieten oder Erlauben von Zugriff auf Ressourcen
 
 </v-clicks>
+
+---
+
+# Authentifizierung und Autorisierung
+
+Grundlagen Authentifizierung
+
+<v-clicks depth="2">
+
+- Identitätsfeststellung
+- Faktoren bei Authentifizierungsverfahren
+  - Wissen
+  - Sein
+  - Besitz
+- höhere Sicherheit bei Kombination der Kategorien zu Multi-Faktor-Authentifizierung
+- Eigenschaften von Authentifizierungsdaten (Credentials)
+  - zeitlich begrenzt
+  - nicht fälschbar
+  - durch Diebstahl kein unbefugter Zugriff
+- Verfahren: Basic Authentication für HTTP oder HTTPS
+
+</v-clicks>
