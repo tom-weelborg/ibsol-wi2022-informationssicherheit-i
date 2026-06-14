@@ -727,7 +727,7 @@ qX4U3XpnYxUgKZCDLkK8SIvktZ3z9uVczkYE0ZEq3ns
       </div>
 <div class="w-2/3">
 
-```
+```javascript
 HMACSHA256(
   base64UrlEncode(header) + "." +
   base64UrlEncode(payload),
